@@ -25,9 +25,9 @@ public class UserResource {
 		return ResponseEntity.ok().body(list); // ok() -> Retornar a resposta c/ sucesso | body() -> corpo da resposta.
 	}
 	
-	@GetMapping(value = "/{id}") // Que a URL irá receber um ID
-	public ResponseEntity<User> findById(@PathVariable Long id) { // @PathVariable é uma anotação que sinaliza ao Spring aceitar o id da URL como parametro
-		User obj = userService.findById(id);
-		return ResponseEntity.ok().body(obj);
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<User> findById(@PathVariable Long id) {
+		User u = userService.findById(id);
+		return ResponseEntity.ok().body(u);
 	}
 }

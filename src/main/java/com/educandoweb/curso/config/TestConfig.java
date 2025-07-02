@@ -10,7 +10,7 @@ import com.educandoweb.curso.repositories.UserRepository;
 
 @Configuration 
 @Profile("test")
-public class TestConfig implements CommandLineRunner {
+public class TestConfig implements CommandLineRunner { // Popular o BD.
 
 	@Autowired
 	private UserRepository userRepository;
