@@ -17,7 +17,7 @@ public class TestConfig implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		User u1 = new User(null, "Alan", "alan@gmail.com", "999", "123456");
+		User u1 = new User(null, "Alan", "alan@gmail.com", "999", "1234567");
 		userRepository.save(u1);
 	}
 }
