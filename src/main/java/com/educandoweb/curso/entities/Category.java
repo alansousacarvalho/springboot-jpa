@@ -1,12 +1,15 @@
 package com.educandoweb.curso.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,6 +22,9 @@ public class Category implements Serializable {
 	private Long id;
 	private String name;
 	
+	@OneToMany
+	private Set<Product> products = new HashSet<>();
+	
 	public Category() {
 	}
 	
@@ -26,6 +32,7 @@ public class Category implements Serializable {
 		this.id = id;
 		this.name = name;
 	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -39,6 +46,10 @@ public class Category implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Set<Product> getProducts() {
+		return products;
 	}
 
 	@Override

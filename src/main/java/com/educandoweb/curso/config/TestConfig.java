@@ -10,10 +10,12 @@ import org.springframework.context.annotation.Profile;
 
 import com.educandoweb.curso.entities.Category;
 import com.educandoweb.curso.entities.Order;
+import com.educandoweb.curso.entities.Product;
 import com.educandoweb.curso.entities.User;
 import com.educandoweb.curso.entities.enums.OrderStatus;
 import com.educandoweb.curso.repositories.CategoryRepository;
 import com.educandoweb.curso.repositories.OrderRepository;
+import com.educandoweb.curso.repositories.ProductRepository;
 import com.educandoweb.curso.repositories.UserRepository;
 
 @Configuration 
@@ -28,9 +30,18 @@ public class TestConfig implements CommandLineRunner { // Popular o BD.
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		Product prod1 = new Product(null, "Notebook", "Computador", 1.400, "imgUrl");
+		Product prod2 = new Product(null, "A56", "Celular", 2.000, "imgUrl");
+		Product prod3 = new Product(null, "Garrafa PACCO", "Acessórios", 390.00, "imgUrl");
+		
+		productRepository.saveAll(Arrays.asList(prod1, prod2, prod3));
 		
 		Category cat1 = new Category(null, "Eletronics");
 		Category cat2 = new Category(null, "Books");
