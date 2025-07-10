@@ -18,13 +18,13 @@ public class ProductResource {
 
 	@Autowired
 	private ProductService productService;
-	
+
 	@GetMapping()
 	public ResponseEntity<List<Product>> findAll() {
 		List<Product> listProd = productService.findAll();
 		return ResponseEntity.ok().body(listProd);
 	}
-	
+
 	@GetMapping(value = "{id}")
 	public ResponseEntity<Product> findById(@PathVariable Long id) {
 		Product prod = productService.findById(id);
