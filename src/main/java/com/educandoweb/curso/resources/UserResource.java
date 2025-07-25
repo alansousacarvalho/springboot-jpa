@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.educandoweb.curso.entities.User;
 import com.educandoweb.curso.services.UserService;
 
-@RestController // Setar que é a classe é um Recurso Web q é implementado por 1 Controlador REST
+@RestController // Setar que a classe é um Recurso Web q é implementado por 1 Controlador REST
 @RequestMapping(value = "/users") // Nome e caminho do recurso.
 public class UserResource {
 

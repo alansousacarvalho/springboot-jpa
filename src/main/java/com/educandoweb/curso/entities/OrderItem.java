@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class OrderItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@EmbeddedId
+	@EmbeddedId	
 	private OrderItemPK id;
 	
 	private Integer quantity;
@@ -25,7 +25,6 @@ public class OrderItem implements Serializable {
 	}
 
 	public OrderItem(Order order, Product product, Integer quantity, Double price) {
-		super();
 		id.setOrder(order);
 		id.setProduct(product);
 		this.quantity = quantity;

@@ -35,7 +35,7 @@ public class TestConfig implements CommandLineRunner { // Popular o BD.
 	private ProductRepository productRepository;
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) throws Exception { // Método do "CommandLinerRunner"; Inicia na execução 
 		
 		Product p1 = new Product(null, "The Lord of the Rings", "Lorem ipsum dolor sit amet, consectetur.", 90.5, "");
 		Product p2 = new Product(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", 2190.0, "");
